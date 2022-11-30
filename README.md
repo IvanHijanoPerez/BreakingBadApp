@@ -4,21 +4,20 @@
 <img align="center" width="300" alt="portfolio_view" src="./docs/logo.png">
 </p>
 
-## Definition:
+## Description:
 
-
+Android application developed in the Kotlin language. The application shows the characters of Breaking Bad (https://breakingbadapi.com/) in a list and when you click on a specific character, a new page opens with more details about the chosen character.
 
 ## Features:
 
-- Firebase Authentication
-- Firebase Realtime Database
-- Firebase Storage
-- Firebase Messaging
-- Picasso
-- Volley
-- Gson
-- Spanish and English traductions
-- Material Design
+- Retrofit
+- Jetpack Compose
+- Jetpack Viewmodel
+- MVVM
+- Clean Architecture
+- Coroutines
+- Dagger Hilt
+- Coil
 
 # Screens
 
