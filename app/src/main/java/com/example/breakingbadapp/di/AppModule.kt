@@ -20,7 +20,8 @@ object AppModule {
     @Singleton
     fun provideBreakingBadApi(): BreakingBadApi {
         return Retrofit.Builder().baseUrl(Constants.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build().create(BreakingBadApi::class.java)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+            .create(BreakingBadApi::class.java)
     }
 
     @Provides

@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.breakingbadapp.common.Constants
 import com.example.breakingbadapp.common.Resource
 import com.example.breakingbadapp.domain.use_case.get_character.GetCharacterUseCase
-import com.example.breakingbadapp.domain.use_case.get_characters.GetCharactersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -31,12 +30,14 @@ class CharacterDetailViewModel @Inject constructor(
 
     private fun getCharacter(characterId: Int) {
         getCharacterUseCase(characterId).onEach { result ->
-            when(result) {
+            when (result) {
                 is Resource.Success -> {
                     _state.value = CharacterDetailState(character = result.data)
                 }
                 is Resource.Error -> {
-                    _state.value = CharacterDetailState(error = result.message ?: "An unexpected error occurred")
+                    _state.value = CharacterDetailState(
+                        error = result.message ?: "An unexpected error occurred"
+                    )
                 }
                 is Resource.Loading -> {
                     _state.value = CharacterDetailState(isLoading = true)

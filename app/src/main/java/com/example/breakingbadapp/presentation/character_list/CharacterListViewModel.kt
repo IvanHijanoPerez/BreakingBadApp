@@ -25,12 +25,13 @@ class CharacterListViewModel @Inject constructor(
 
     private fun getCharacters() {
         getCharactersUseCase().onEach { result ->
-            when(result) {
+            when (result) {
                 is Resource.Success -> {
                     _state.value = CharacterListState(characters = result.data ?: emptyList())
                 }
                 is Resource.Error -> {
-                    _state.value = CharacterListState(error = result.message ?: "An unexpected error occurred")
+                    _state.value =
+                        CharacterListState(error = result.message ?: "An unexpected error occurred")
                 }
                 is Resource.Loading -> {
                     _state.value = CharacterListState(isLoading = true)

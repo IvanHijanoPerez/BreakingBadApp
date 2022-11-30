@@ -1,6 +1,5 @@
 package com.example.breakingbadapp.data.remote.dto
 
-import com.example.breakingbadapp.domain.model.Character
 import com.example.breakingbadapp.domain.model.CharacterDetail
 
 data class CharacterDetailDtoItem(

@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface BreakingBadApi {
 
     @GET("/api/characters")
-    suspend fun  getCharacters(): List<CharacterDto>
+    suspend fun getCharacters(): List<CharacterDto>
 
     @GET("/api/characters/{characterId}")
     suspend fun getCharacterById(@Path("characterId") characterId: Int): CharacterDetailDto

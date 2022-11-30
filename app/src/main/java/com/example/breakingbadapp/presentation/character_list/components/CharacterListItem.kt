@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.base.R
 import coil.compose.rememberImagePainter
@@ -31,7 +30,9 @@ fun CharacterListItem(
             .padding(8.dp, 4.dp)
             .fillMaxWidth()
             .height(110.dp)
-            .clickable { onItemClick(character) }, shape = RoundedCornerShape(8.dp), elevation = 4.dp
+            .clickable { onItemClick(character) },
+        shape = RoundedCornerShape(8.dp),
+        elevation = 4.dp
     ) {
         Surface() {
 

@@ -2,7 +2,6 @@ package com.example.breakingbadapp.domain.use_case.get_character
 
 import com.example.breakingbadapp.common.Resource
 import com.example.breakingbadapp.data.remote.dto.toCharacter
-import com.example.breakingbadapp.domain.model.Character
 import com.example.breakingbadapp.domain.model.CharacterDetail
 import com.example.breakingbadapp.domain.repository.CharacterRepository
 import kotlinx.coroutines.flow.Flow
@@ -20,7 +19,11 @@ class GetCharacterUseCase @Inject constructor(
             val character = repository.getCharacterById(characterId)[0].toCharacter()
             emit(Resource.Success<CharacterDetail>(character))
         } catch (e: HttpException) {
-            emit(Resource.Error<CharacterDetail>(e.localizedMessage ?: "An unexpected error occurred"))
+            emit(
+                Resource.Error<CharacterDetail>(
+                    e.localizedMessage ?: "An unexpected error occurred"
+                )
+            )
         } catch (e: IOException) {
             emit(Resource.Error<CharacterDetail>("Couldn't reach server. Check your internet connection"))
         }
